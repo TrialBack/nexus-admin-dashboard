@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
 import React from "react";
+import MobileSideBar from "@/components/MobileSidebar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,7 +29,12 @@ export default function RootLayout({
         <main className="flex-1 flex flex-col h-full overflow-y-auto">
           {/* Header - DÜZELTME: justify-between ve px-6 */}
           <header className="flex h-16 items-center justify-between border-b bg-white px-6 shadow-sm">
-            <h2 className="text-lg font-semibold text-gray-800">Overview</h2>
+            
+            <div className="flex items-center gap-4">
+              <MobileSideBar />
+              <h2 className="text-lg font-semibold text-gray-800">Overview</h2>
+            </div>
+
             <div className="flex items-center gap-4">
               {/* Kullanıcı Avatarı */}
               <div className="h-8 w-8 rounded-full bg-blue-500"></div>
